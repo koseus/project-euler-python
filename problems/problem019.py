@@ -31,5 +31,3 @@ def solve():
             day_of_week = (day_of_week + days_in_month(year, month)) % 7
     
     return sunday_count
-
-    print(solve())
