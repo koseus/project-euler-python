@@ -31,3 +31,22 @@ def lcm(a, b):
     Compute the Least Common Multiple of a and b.
     """
     return a * b // gcd(a, b)
+
+
+def get_factors(n):
+    """
+    Find all factors of a number.
+    Returns a list of factors in ascending order.
+    """
+    factors = []
+    sqrt_n = int(n ** 0.5) + 1
+    
+    # Check numbers up to square root
+    for i in range(1, sqrt_n):
+        if n % i == 0:
+            factors.append(i)
+            # Add the corresponding factor
+            if i != n // i:
+                factors.append(n // i)
+    
+    return sorted(factors)
